@@ -1,0 +1,13 @@
+# eclipse
+.classpath
+.project
+.settings
+
+# general
+target
+*.class
+*.jar
+*.log
+logs
+log
+
