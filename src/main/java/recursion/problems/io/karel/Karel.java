@@ -24,5 +24,5 @@ public class Karel {
 		// TODO
 		return 0;
 	}
-
+	
 }
