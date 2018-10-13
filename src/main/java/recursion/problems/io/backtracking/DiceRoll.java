@@ -36,9 +36,10 @@ public class DiceRoll {
 			for (int i = 1; i <= 6; i++) {
 				// choose
 				chosen.add(i);
-				//result.add(chosen);
+				
 				// explore
 				diceHelper(chosen, numDice - 1);
+				
 				// backtrack
 				chosen.remove(chosen.size() - 1);
 			}
