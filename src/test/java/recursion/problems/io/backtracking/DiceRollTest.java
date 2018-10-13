@@ -21,7 +21,7 @@ public class DiceRollTest {
 	private DiceRoll diceRoll;
 
 	@Test
-	public void test() {
+	public void testDiceRoll() {
 		log.info("| Dice Roll Test");
 		List<List<Integer>> res2 = diceRoll.getDiceRollSequence(2);
 		log.info("| Res of 2: {}", res2);

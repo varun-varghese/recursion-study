@@ -43,9 +43,5 @@ public class DiceSum {
 			}
 		}
 	}
-	
-	private int sumAll(List<Integer> chosen) {
-		return chosen.stream().collect(Collectors.summingInt(Integer::intValue));
-	}
 
 }
