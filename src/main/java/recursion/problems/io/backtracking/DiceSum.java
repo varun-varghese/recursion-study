@@ -19,27 +19,27 @@ public class DiceSum {
 		result = new LinkedList<List<Integer>>();
 		List<Integer> chosen = new LinkedList<Integer>();
 		
-		diceHelper(chosen, numDice, expectedSum);
+		diceHelper(chosen, numDice, expectedSum, 0);
 		return result;
 	}
 
-	private void diceHelper(List<Integer> chosen, int dice, int sum) {
+	private void diceHelper(List<Integer> chosen, int dice, int desiredSum, int sumSoFar) {
 		// base
 		if (dice == 0) {
-			if (sumAll(chosen) == sum) {
-				log.debug("| Found a sum {}", chosen);
-				result.add(chosen.stream().collect(Collectors.toList()));
-			}
+			result.add(chosen.stream().collect(Collectors.toList()));
 		} else {
 			for (int i = 1; i <= 6; i++) {
-				// chosen
-				chosen.add(i);
-				
-				// explore
-				diceHelper(chosen, dice - 1, sum);
-				
-				// backtrack
-				chosen.remove(chosen.size() - 1);
+				if ((sumSoFar + i + 1 * (dice - 1) <= desiredSum) && 
+					(sumSoFar + i + 6 * (dice - 1) >= desiredSum)) {
+					// chosen
+					chosen.add(i);
+					
+					// explore
+					diceHelper(chosen, dice - 1, desiredSum, sumSoFar + i);
+					
+					// backtrack
+					chosen.remove(chosen.size() - 1);
+				}
 			}
 		}
 	}
