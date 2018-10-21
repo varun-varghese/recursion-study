@@ -21,6 +21,8 @@ public class HumanPyramidTest {
 
 	@Test
 	public void test() {
+		log.info(" Human Pyramid Test");
+		
 		assertEquals(0.0d, humanPyramid.weightOnBackOf(0, 0), 0.0d);
 		assertEquals(100.0d, humanPyramid.weightOnBackOf(1, 0), 0.0d);
 		assertEquals(100.0d, humanPyramid.weightOnBackOf(1, 1), 0.0d);
@@ -36,6 +38,9 @@ public class HumanPyramidTest {
 		assertEquals(625.0d, humanPyramid.weightOnBackOf(4, 2), 0.0d);
 		assertEquals(500.0d, humanPyramid.weightOnBackOf(4, 3), 0.0d);
 		assertEquals(187.5d, humanPyramid.weightOnBackOf(4, 4), 0.0d);
+		
+		log.info("40,20: {}", humanPyramid.weightOnBackOf(40, 20));
+		log.info("200,100: {}", humanPyramid.weightOnBackOf(200, 100));
 	}
 
 }
